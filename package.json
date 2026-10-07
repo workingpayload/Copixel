@@ -1,0 +1,48 @@
+{
+  "name": "copixel",
+  "version": "1.0.0",
+  "description": "GitHub Copilot CLI extension that renders large tool results as images to save tokens, with a savings dashboard and shared per-repo session context",
+  "keywords": [
+    "copilot",
+    "copilot-cli",
+    "github-copilot",
+    "extension",
+    "tokens",
+    "llm",
+    "pxpipe",
+    "context"
+  ],
+  "homepage": "https://github.com/workingpayload/Copixel#readme",
+  "bugs": {
+    "url": "https://github.com/workingpayload/Copixel/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/workingpayload/Copixel.git"
+  },
+  "license": "ISC",
+  "type": "commonjs",
+  "bin": {
+    "copixel": "bin/copixel.mjs"
+  },
+  "files": [
+    "bin/",
+    "dashboard/",
+    "extension.mjs",
+    "eventlog.mjs",
+    "context.mjs",
+    "installer.mjs",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "dashboard": "node dashboard/server.mjs",
+    "test": "node --test",
+    "prepublishOnly": "npm test"
+  },
+  "dependencies": {
+    "pxpipe-proxy": "^0.14.0"
+  }
+}

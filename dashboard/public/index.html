@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>copixel dashboard</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <div class="brand"><span class="logo">▦</span> copixel <span class="muted">savings dashboard</span></div>
+  <div class="status"><span id="status" class="muted">loading…</span></div>
+</header>
+
+<main>
+  <section id="banner" class="banner hidden"></section>
+
+  <section class="kpis">
+    <div class="kpi accent"><div class="label">Dollars saved (est.)</div><div class="value" id="k-usd">–</div><div class="sub" id="k-usd-sub"></div></div>
+    <div class="kpi"><div class="label">Tokens saved (net)</div><div class="value" id="k-tokens">–</div><div class="sub" id="k-tokens-sub"></div></div>
+    <div class="kpi"><div class="label">Results imaged</div><div class="value" id="k-imaged">–</div><div class="sub" id="k-imaged-sub"></div></div>
+    <div class="kpi"><div class="label">Compression</div><div class="value" id="k-comp">–</div><div class="sub" id="k-comp-sub"></div></div>
+    <div class="kpi"><div class="label">Sessions</div><div class="value" id="k-sessions">–</div><div class="sub" id="k-sessions-sub"></div></div>
+    <div class="kpi"><div class="label">Copilot spend</div><div class="value" id="k-spend">–</div><div class="sub" id="k-spend-sub"></div></div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><h2>Daily savings — last 30 days</h2>
+      <div class="seg" id="chart-mode"><button data-mode="usd" class="on">$</button><button data-mode="tokens">tokens</button></div>
+    </div>
+    <div id="chart" class="chart"></div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><h2>Sessions</h2>
+      <div class="controls">
+        <label><input type="checkbox" id="only-copixel"> only with copixel activity</label>
+        <input type="search" id="filter" placeholder="filter by name, repo, id…">
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table id="sessions">
+        <thead><tr>
+          <th>Session</th><th>Repository</th><th>Last active</th><th>Models</th>
+          <th class="num">Imaged</th><th class="num">Tokens saved</th><th class="num">$ saved</th>
+          <th class="num">Calls</th><th class="num">Spend</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="grid2">
+    <section class="card"><h2>By model</h2>
+      <table id="by-model"><thead><tr><th>Model</th><th class="num">Imaged</th><th class="num">Tokens saved</th><th class="num">$ saved</th></tr></thead><tbody></tbody></table>
+    </section>
+    <section class="card"><h2>By tool</h2>
+      <table id="by-tool"><thead><tr><th>Tool</th><th class="num">Imaged</th><th class="num">Tokens saved</th><th class="num">$ saved</th></tr></thead><tbody></tbody></table>
+    </section>
+  </div>
+
+  <section class="card">
+    <h2>Recent activity</h2>
+    <div class="table-wrap">
+      <table id="recent"><thead><tr>
+        <th>Time</th><th>Event</th><th>Tool</th><th>Model</th><th class="num">Chars</th><th class="num">Pages</th>
+        <th class="num">Text tok</th><th class="num">Image tok</th><th class="num">Saved tok</th><th class="num">$</th><th></th>
+      </tr></thead><tbody></tbody></table>
+    </div>
+    <div id="preview" class="preview hidden"><img alt="rendered tool output page"></div>
+  </section>
+
+  <section class="card">
+    <h2>Pricing &amp; assumptions</h2>
+    <div id="assumptions" class="assumptions"></div>
+    <table id="pricing"><thead><tr><th>Model</th><th class="num">Input $/M</th><th class="num">Cache write $/M</th><th class="num">Cache read $/M</th><th class="num">Output $/M</th></tr></thead><tbody></tbody></table>
+  </section>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
