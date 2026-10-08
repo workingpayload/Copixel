@@ -114,8 +114,3 @@ Run the tests with `npm test`.
   This spends AI credits.
 =======
 
-
-## License
-
-MIT.
->>>>>>> b311bc8 (intial commit)
