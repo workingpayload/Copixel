@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Copixel (Copilot CLI extension)
 
 Uses [pxpipe](https://github.com/teamchong/pxpipe) to render large **tool results** as dense PNG pages, so
