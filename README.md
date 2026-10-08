@@ -112,5 +112,4 @@ Run the tests with `npm test`.
   `copixel_get_text` returns the exact text.
 - Savings depend on how Copilot counts image tokens. Run `node measure.mjs` to A/B it with real usage.
   This spends AI credits.
-=======
 
